@@ -1,0 +1,12 @@
+/* Estilos básicos */
+body {
+    margin: 0;
+    background-color: #121212;
+}
+
+/* Estilo para el canvas */
+canvas {
+    display: block;
+    margin: auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
