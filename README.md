@@ -1,2 +1,2 @@
-# mi_portafolio
+# Mi portafolio
 Portafolio personal :)
