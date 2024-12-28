@@ -27,7 +27,7 @@
     overflow: hidden; /* Oculta el texto que aún no se ha mostrado */
     border-right: .15em solid #20beff; /* Cursor de tipo "teclado" */
     width: 0; /* Inicialmente el texto no se muestra */
-    animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite; /* Efecto de tipeo y parpadeo */
+    animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite; /* Efecto de tipeo y parpadeo */
   }
 
   /* Efecto de escritura */
