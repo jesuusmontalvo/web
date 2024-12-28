@@ -6,7 +6,7 @@ function typeText() {
   if (index < titleText.length) {
     titleElement.textContent += titleText[index]; // Agrega una letra a la vez
     index++;
-    setTimeout(typeText, 150); // Controla la velocidad de tipeo
+    setTimeout(typeText, 100); // Controla la velocidad de tipeo
   }
 }
 
