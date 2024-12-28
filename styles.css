@@ -52,7 +52,7 @@
     overflow: hidden;
     border-right: .15em solid #20beff;
     width: 0;
-    animation: typingSubtitle 3s steps(30) 5s forwards, blink 0.75s step-end infinite; /* Comienza después del título */
+    animation: typingSubtitle 1s steps(60) 5s forwards, blink 0.75s step-end infinite; /* Comienza después del título */
   }
   
   @keyframes typingSubtitle {
