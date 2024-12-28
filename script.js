@@ -28,3 +28,4 @@ function typeSubtitle() {
 }
 
 typeTitle(); // Inicia el efecto para el título
+typeSubtitle();
