@@ -22,47 +22,6 @@
     min-height: 100vh;
   }
 
-  .title {
-    white-space: nowrap;  /* Evita que el texto se divida en varias líneas */
-    overflow: hidden; /* Oculta el texto que aún no se ha mostrado */
-    border-right: .15em solid #20beff; /* Cursor de tipo "teclado" */
-    width: 0; /* Inicialmente el texto no se muestra */
-    animation: typing 1s steps(60) 1s forwards, blink 0.75s step-end infinite; /* Efecto de tipeo y parpadeo */
-  }
-
-  /* Efecto de escritura */
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-  
-  /* Efecto de parpadeo del cursor */
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
-
-  .subtitle {
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: .15em solid #20beff;
-    width: 0;
-    animation: typingSubtitle 1s steps(60) 1s forwards, blink 0.75s step-end infinite; /* Comienza después del título */
-  }
-  
-  @keyframes typingSubtitle {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
 
   .container {
     text-align: center;
