@@ -1,13 +1,30 @@
-const titleText = "Jesús Fernando Montalvo Olazabal"; // El texto a mostrar
-const titleElement = document.querySelector('.title'); // Selecciona el elemento <h1> donde se mostrará el texto
-let index = 0;
+const titleText = "Jesús Fernando Montalvo Olazabal"; // Texto del título
+const subtitleText = "Jr. Machine Learning Engineer, Jr. Data Scientist y Matemático"; // Texto del subtítulo
 
-function typeText() {
-  if (index < titleText.length) {
-    titleElement.textContent += titleText[index]; // Agrega una letra a la vez
-    index++;
-    setTimeout(typeText, 50); // Controla la velocidad de tipeo
+const titleElement = document.querySelector('.title'); // Selecciona el elemento <h1>
+const subtitleElement = document.querySelector('.subtitle'); // Selecciona el elemento <p>
+
+let titleIndex = 0;
+let subtitleIndex = 0;
+
+// Función para escribir el título
+function typeTitle() {
+  if (titleIndex < titleText.length) {
+    titleElement.textContent += titleText[titleIndex];
+    titleIndex++;
+    setTimeout(typeTitle, 150); // Controla la velocidad de tipeo para el título
+  } else {
+    setTimeout(typeSubtitle, 500); // Espera un momento y luego comienza el subtítulo
   }
 }
 
-typeText(); // Llama a la función para iniciar el efecto
+// Función para escribir el subtítulo
+function typeSubtitle() {
+  if (subtitleIndex < subtitleText.length) {
+    subtitleElement.textContent += subtitleText[subtitleIndex];
+    subtitleIndex++;
+    setTimeout(typeSubtitle, 100); // Controla la velocidad de tipeo para el subtítulo
+  }
+}
+
+typeTitle(); // Inicia el efecto para el título

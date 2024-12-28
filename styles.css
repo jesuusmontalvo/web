@@ -47,6 +47,23 @@
     }
   }
 
+  .subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid #20beff;
+    width: 0;
+    animation: typingSubtitle 3s steps(30) 5s forwards, blink 0.75s step-end infinite; /* Comienza después del título */
+  }
+  
+  @keyframes typingSubtitle {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
   .container {
     text-align: center;
     padding: 20px;
