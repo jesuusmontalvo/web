@@ -10,7 +10,8 @@
   --radius--round: 100vw;
   --theme--toggle-offset: 0px;
   --theme--toggle-offset--dark: calc(100% / 2 - var(--border-width--main)* 2);
-  --space--2: var(--size--0-5rem);
+  --size--0-3rem: 0.25rem;
+  --space--2: var(--size--0-3rem);
   --container--full: 0px;
 }
 
@@ -33,6 +34,7 @@ body {
 .container {
   text-align: center;
   padding: 20px;
+  z-index: 1;
 }
 
 .header .title {
@@ -180,9 +182,21 @@ body {
 body[data-theme="light"] {
   background-color: #ffffff;
   color: #000000;
+  z-index: -1;
 }
 
 body[data-theme="dark"] {
   background-color: #000000;
   color: #ffffff;
+  z-index: -1;
+}
+
+/* Estilos generales */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto; /* Permitir clics en el canvas */
 }
