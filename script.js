@@ -15,7 +15,7 @@ toggleButton.addEventListener('click', () => {
 const canvas = document.getElementById('background');
 const contexto = canvas.getContext('2d');
 const nodos = [];
-const maxnodos = 200;
+const maxnodos = 100;
 const maxDistancia = 100; 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -24,16 +24,16 @@ class Star {
   constructor() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.radio = Math.random() * 2 + 1;
+    this.radio = Math.random() * 2 + 2;
     this.dx = (Math.random() - 0.5) * 1.5; 
     this.dy = (Math.random() - 0.5) * 1.5;
-    this.opacidad = Math.random();
+    this.opacidad = Math.random();  
   }
 
   draw() {
     contexto.beginPath();
     contexto.arc(this.x, this.y, this.radio, 0, Math.PI * 10, false);
-    contexto.fillStyle = `rgba(34, 133, 179, ${this.opacidad})`;
+    contexto.fillStyle = `rgba(135, 206, 250, ${this.opacidad})`;
     contexto.fill();
   }
 
