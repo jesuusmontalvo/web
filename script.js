@@ -20,7 +20,6 @@ const maxDistancia = 100;
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-
 class Star {
   constructor() {
     this.x = Math.random() * canvas.width;
