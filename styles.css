@@ -80,6 +80,7 @@ body {
   margin-right: auto;
 }
 .nav_1_wrap {
+  margin-top: 10px;
   z-index: 1000;
   background-color: #fff0;
   position: fixed;
@@ -102,8 +103,8 @@ body {
   padding: var(--border-width--main);
   border-radius: var(--radius--round);
   background-color: black;
-  width: 5rem;
-  height: 2rem;
+  width: 4rem;
+  height: 1.5rem;
   display: flex;
   position: relative;
 }
@@ -111,8 +112,8 @@ body {
   padding: var(--border-width--main);
   border-radius: var(--radius--round);
   background-color: white;
-  width: 5rem;
-  height: 2rem;
+  width: 4rem;
+  height: 1.5rem;
   display: flex;
   position: relative;
 }
