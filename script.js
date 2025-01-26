@@ -1,16 +1,29 @@
+// Establece el tema predeterminado como "dark"
 const body = document.body;
+body.dataset.theme = "dark"; // Configura el tema oscuro al inicio
+
 const toggleButton = document.getElementById('theme-toggle-btn');
 const slicer = document.getElementById('slicer');
-const container_slicer = document.getElementById("container_slicer")
-const moon_icon = document.getElementById("moon_icon")
+const moon_icon = document.getElementById("moon_icon");
+const habilidades_tecnicas = document.getElementById("experiencia_profesional");
+// Asegúrate de que los elementos relacionados comiencen con el estado oscuro
+slicer.classList.add('dark');
+toggleButton.classList.add('dark');
+moon_icon.style.color = 'black';
 
 toggleButton.addEventListener('click', () => {
   const currentTheme = body.dataset.theme;
+
+  // Alterna entre "dark" y "light"
   slicer.classList.toggle('dark');
   toggleButton.classList.toggle('dark');
-  moon_icon.style.color = 'black';
-  body.dataset.theme = currentTheme === "light" ? "dark" : "light";
+  body.dataset.theme = currentTheme === "dark" ? "light" : "dark";
+
+  // Cambia el color del ícono de la luna según el tema
+  moon_icon.style.color = currentTheme === "dark" ? 'light' : 'black';
+  habilidades_tecnicas.classList.toggle('light');
 });
+
 
 const canvas = document.getElementById('background');
 const contexto = canvas.getContext('2d');
@@ -99,3 +112,60 @@ window.addEventListener('resize', () => {
 });
 
 animate();
+
+function smoothScroll(target, duration) {
+  const targetElement = document.querySelector(target); // Selecciona el elemento objetivo
+  if (!targetElement) return;
+
+  const startPosition = window.pageYOffset; // Posición actual
+  const targetPosition = targetElement.getBoundingClientRect().top + startPosition; // Calcula la posición exacta
+  const offset = 0; // Ajusta esto si deseas restar algún espacio adicional (p. ej., un header fijo)
+  const finalPosition = targetPosition - offset;
+
+  let startTime = null;
+
+  function animationScroll(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const run = ease(timeElapsed, startPosition, finalPosition - startPosition, duration);
+    window.scrollTo(0, run);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animationScroll);
+    } else {
+      window.scrollTo(0, finalPosition); // Asegura que termina en la posición exacta
+    }
+  }
+
+  function ease(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  }
+
+  requestAnimationFrame(animationScroll);
+}
+
+document.querySelector('.about-link').addEventListener('click', function (e) {
+  e.preventDefault();
+  smoothScroll('#screen-2', 1000); // 1000 ms (1 segundo) de duración
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-section-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Eliminar clase activa de todas las pestañas y contenido
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      // Activar la pestaña seleccionada y su contenido
+      tab.classList.add('active');
+      const target = document.getElementById(tab.dataset.tab);
+      target.classList.add('active');
+    });
+  });
+});
