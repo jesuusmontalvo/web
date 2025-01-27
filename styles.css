@@ -448,3 +448,14 @@ ul li::before {
   font-size: 1rem;
 }
 
+@media (max-width: 768px) {
+  .screen-2 {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+}
