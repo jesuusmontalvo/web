@@ -1,12 +1,10 @@
-// Establece el tema predeterminado como "dark"
 const body = document.body;
-body.dataset.theme = "dark"; // Configura el tema oscuro al inicio
+body.dataset.theme = "dark";
 
 const toggleButton = document.getElementById('theme-toggle-btn');
 const slicer = document.getElementById('slicer');
 const moon_icon = document.getElementById("moon_icon");
 const habilidades_tecnicas = document.getElementById("experiencia_profesional");
-// Asegúrate de que los elementos relacionados comiencen con el estado oscuro
 slicer.classList.add('dark');
 toggleButton.classList.add('dark');
 moon_icon.style.color = 'black';
@@ -14,12 +12,10 @@ moon_icon.style.color = 'black';
 toggleButton.addEventListener('click', () => {
   const currentTheme = body.dataset.theme;
 
-  // Alterna entre "dark" y "light"
   slicer.classList.toggle('dark');
   toggleButton.classList.toggle('dark');
   body.dataset.theme = currentTheme === "dark" ? "light" : "dark";
 
-  // Cambia el color del ícono de la luna según el tema
   moon_icon.style.color = currentTheme === "dark" ? 'light' : 'black';
   habilidades_tecnicas.classList.toggle('light');
 });
@@ -114,12 +110,12 @@ window.addEventListener('resize', () => {
 animate();
 
 function smoothScroll(target, duration) {
-  const targetElement = document.querySelector(target); // Selecciona el elemento objetivo
+  const targetElement = document.querySelector(target);
   if (!targetElement) return;
 
-  const startPosition = window.pageYOffset; // Posición actual
-  const targetPosition = targetElement.getBoundingClientRect().top + startPosition; // Calcula la posición exacta
-  const offset = 0; // Ajusta esto si deseas restar algún espacio adicional (p. ej., un header fijo)
+  const startPosition = window.pageYOffset;
+  const targetPosition = targetElement.getBoundingClientRect().top + startPosition;
+  const offset = 0; 
   const finalPosition = targetPosition - offset;
 
   let startTime = null;
@@ -133,7 +129,7 @@ function smoothScroll(target, duration) {
     if (timeElapsed < duration) {
       requestAnimationFrame(animationScroll);
     } else {
-      window.scrollTo(0, finalPosition); // Asegura que termina en la posición exacta
+      window.scrollTo(0, finalPosition);
     }
   }
 
@@ -149,7 +145,7 @@ function smoothScroll(target, duration) {
 
 document.querySelector('.about-link').addEventListener('click', function (e) {
   e.preventDefault();
-  smoothScroll('#screen-2', 1000); // 1000 ms (1 segundo) de duración
+  smoothScroll('#screen-2', 1000);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -158,11 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      // Eliminar clase activa de todas las pestañas y contenido
       tabs.forEach(t => t.classList.remove('active'));
       contents.forEach(c => c.classList.remove('active'));
-
-      // Activar la pestaña seleccionada y su contenido
       tab.classList.add('active');
       const target = document.getElementById(tab.dataset.tab);
       target.classList.add('active');

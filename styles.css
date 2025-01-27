@@ -208,7 +208,7 @@ canvas {
 body[data-theme="light"] {
   background-color: #ffffff;
   color: #000000;
-  flex-direction: column; /* Asegura el flujo vertical */
+  flex-direction: column;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -218,7 +218,7 @@ body[data-theme="light"] {
 body[data-theme="dark"] {
   background-color: #000000;
   color: #ffffff;
-  flex-direction: column; /* Asegura el flujo vertical */
+  flex-direction: column;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -261,7 +261,7 @@ body[data-theme="dark"] {
 .about-link {
   margin-right: 10px;
   font-size: 14px;
-  color: #000; /* Ajusta el color según el tema */
+  color: #000;
   text-decoration: none;
   cursor: pointer;
 }
@@ -272,42 +272,42 @@ body[data-theme="dark"] {
 
 .modern-button {
 display: inline-block;
-padding: 5.5px 20px; /* Más pequeño en alto y ancho */
-font-size: 10px; /* Texto más compacto */
-font-weight: 600; /* Peso del texto */
-color: rgba(255, 255, 255, 0.9); /* Blanco con un poco de transparencia */
-background: rgba(15, 23, 42, 0.7); /* Gris translúcido */
-border: 1px solid rgba(255, 255, 255, 0.37); /* Borde sutil y elegante */
-border-radius: 5px; /* Bordes redondeados */
+padding: 5.5px 20px;
+font-size: 10px;
+font-weight: 600;
+color: rgba(255, 255, 255, 0.9);
+background: rgba(15, 23, 42, 0.7);
+border: 1px solid rgba(255, 255, 255, 0.37);
+border-radius: 5px;
 cursor: pointer;
 transition: all 0.3s ease;
 }
 
 .modern-button.light {
 display: inline-block;
-padding: 5.5px 20px; /* Más pequeño en alto y ancho */
-font-size: 10px; /* Texto más compacto */
-font-weight: 600; /* Peso del texto */
-color: rgba(12, 12, 12, 0.9); /* Blanco con un poco de transparencia */
-background: rgba(249, 249, 250, 0.7); /* Gris translúcido */
-border: 1px solid rgba(24, 4, 139, 0.747); /* Borde sutil y elegante */
-border-radius: 5px; /* Bordes redondeados */
+padding: 5.5px 20px;
+font-size: 10px;
+font-weight: 600;
+color: rgba(12, 12, 12, 0.9);
+background: rgba(249, 249, 250, 0.7);
+border: 1px solid rgba(24, 4, 139, 0.747);
+border-radius: 5px;
 cursor: pointer;
 transition: all 0.3s ease;
 }
 
 .modern-button:hover {
-background: rgba(128, 128, 128, 0.9); /* Más opaco al pasar el cursor */
-transform: translateY(-2px); /* Efecto de elevación */
+background: rgba(128, 128, 128, 0.9);
+transform: translateY(-2px);
 }
 
 .modern-button.light:hover {
-background: rgba(24, 4, 139, 0.2); /* Más opaco al pasar el cursor */
-transform: translateY(-2px); /* Efecto de elevación */
+background: rgba(24, 4, 139, 0.2);
+transform: translateY(-2px);
 }
 
 .modern-button:active {
-transform: translateY(2px); /* Efecto de clic */
+transform: translateY(2px);
 }
 
 .screen {
@@ -339,16 +339,16 @@ padding: 20px;
 }
 
 #screen-2 .professional-header {
-  position: relative; /* Hace que el encabezado permanezca fijo al hacer scroll */
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent; /* Fondo transparente */
-  color: #ffffff; /* Texto blanco */
+  background-color: transparent;
+  color: #ffffff;
   padding: 10px 20px;
   z-index: 10;
   text-align: left;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea opcional */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #screen-2 .header-content h1 {
@@ -357,8 +357,6 @@ padding: 20px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
 }
-
-/* Estilo para la sección de experiencia laboral */
 .experience-section {
   max-width: 800px;
   display: flex;
